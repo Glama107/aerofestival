@@ -31,11 +31,16 @@
             <div class="flex flex-col space-y-4 p-4">
                 <a href="#programme" class="text-white hover:text-blue-300">PROGRAMME</a>
                 <a href="#guinguette" class="text-white hover:text-blue-300">RESTAURATION</a>
-                <a href="#benevoles" class="text-white hover:text-blue-300">BÉNÉVOLES</a>
                 <a href="#partenaires" class="text-white hover:text-blue-300">PARTENAIRES</a>
-                <a href="#billeterie" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center mt-2">
-                    BILLETS
-                </a>
+                {% if app.user and is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center mt-2">
+                        DASHBOARD
+                    </a>
+                {% else %}
+                    <a href="#benevoles" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center mt-2">
+                        ÊTRE BÉNÉVOLE
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
