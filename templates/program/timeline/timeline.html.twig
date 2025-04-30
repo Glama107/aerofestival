@@ -1,3 +1,8 @@
 <div class="timeline">
-    {{ include('program/timeline/container.html.twig') }}
+    {% for event in events %}
+        {{ include('program/timeline/container.html.twig', {
+            event: event,
+            position: loop.index0 is even ? 'left' : 'right'
+        }) }}
+    {% endfor %}
 </div>

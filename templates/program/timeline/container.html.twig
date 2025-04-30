@@ -1,7 +1,9 @@
-<div class="timeline-container left">
+<div class="timeline-container {{ position }}">
     <div class="timeline-content">
-        <div class="timeline-time">08:00 - 09:30</div>
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Accueil des visiteurs</h4>
-        <p class="text-gray-600">Ouverture des portes et enregistrement des participants</p>
+        <div class="timeline-time">
+            {{ event.startDate|date('H:i') }} - {{ event.endDate|date('H:i') }}
+        </div>
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">{{ event.title }}</h4>
+        <p class="text-gray-600">{{ event.description }}</p>
     </div>
 </div>
