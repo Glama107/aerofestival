@@ -10,9 +10,15 @@
                 <a href="#programme" class="text-white hover:text-blue-300 nav-link">PROGRAMME</a>
                 <a href="#guinguette" class="text-white hover:text-blue-300 nav-link">RESTAURATION</a>
                 <a href="#partenaires" class="text-white hover:text-blue-300 nav-link">PARTENAIRES</a>
-                <a href="#benevoles" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
-                    ÊTRE BÉNÉVOLE
-                </a>
+                {% if app.user and is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                        DASHBOARD
+                    </a>
+                {% else %}
+                    <a href="#benevoles" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                        ÊTRE BÉNÉVOLE
+                    </a>
+                {% endif %}
             </div>
 
             <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
