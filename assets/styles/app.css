@@ -1,3 +1,297 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #0ea5e9;
+    --secondary: #1e40af;
+}
+
 body {
-    background-color: skyblue;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8fafc;
+}
+
+.title-font {
+    font-family: 'Russo One', sans-serif;
+}
+
+.section-title-font {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+/* Radar animation */
+@keyframes radar {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.radar {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, transparent 49%, var(--primary) 50%);
+    animation: radar 3s linear infinite;
+}
+
+.radar:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Flying plane animation */
+@keyframes fly {
+    0% {
+        transform: translateX(-100px) translateY(50px) rotate(0deg);
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+.flying-plane {
+    position: absolute;
+    animation: fly 15s linear infinite;
+    z-index: 10;
+    opacity: 0;
+}
+
+/* Timeline styling */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 10px;
+}
+
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid var(--primary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid rgba(14, 165, 233, 0.2);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgba(14, 165, 233, 0.2);
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid rgba(14, 165, 233, 0.2);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgba(14, 165, 233, 0.2) transparent transparent;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary);
+}
+
+.right .timeline-content {
+    border-left: none;
+    border-right: 4px solid var(--secondary);
+}
+
+.timeline-time {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Guinguette styling */
+.guinguette-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.guinguette-img {
+    height: 100%;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Swiper customization */
+.swiper {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--primary) !important;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+/* Benevole section */
+.benevole-hero {
+    background: linear-gradient(rgba(14, 165, 233, 0.8), rgba(30, 64, 175, 0.8)), url('https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid rgba(14, 165, 233, 0.2);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent rgba(14, 165, 233, 0.2) transparent transparent;
+    }
+
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+
+    .timeline-content {
+        border-left: 4px solid var(--primary) !important;
+        border-right: none !important;
+    }
 }
