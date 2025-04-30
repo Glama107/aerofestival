@@ -8,6 +8,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8fafc;
+    overflow-x: hidden;
 }
 
 .title-font {
@@ -65,14 +66,11 @@ body {
 @keyframes radar {
     0% {
         transform: rotate(0deg);
-        opacity: 0;
     }
     10% {
-        opacity: 1;
     }
     100% {
         transform: rotate(360deg);
-        opacity: 0;
     }
 }
 
@@ -82,7 +80,7 @@ body {
     height: 60px;
     border-radius: 50%;
     background: linear-gradient(90deg, transparent 49%, var(--primary) 50%);
-    animation: radar 3s linear infinite;
+    animation: radar 10s linear infinite;
 }
 
 .radar:before {
