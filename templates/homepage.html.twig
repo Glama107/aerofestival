@@ -1,0 +1,16 @@
+{% extends('base.html.twig') %}
+
+{% block title %}Aérofestival 2025 | Aéroclub de Villeneuve-sur-Lot{% endblock %}
+
+{% block body %}
+    {{ include('components/flying_planes.html.twig') }}
+    {{ include('components/header.html.twig') }}
+    {{ include('components/hero.html.twig') }}
+    {{ include('program/program.html.twig') }}
+    {{ include('guinguette/guinguette.html.twig') }}
+    {{ include('volunteer.html.twig') }}
+    {{ include('partners.html.twig') }}
+    {{ include('contact.html.twig') }}
+    {{ include('footer.html.twig') }}
+{% endblock %}
+
