@@ -170,7 +170,7 @@ body {
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -17px;
+    right: -10px;
     background-color: white;
     border: 4px solid var(--primary);
     top: 15px;
@@ -213,7 +213,7 @@ body {
 }
 
 .right::after {
-    left: -16px;
+    left: -10px;
 }
 
 .timeline-content {
