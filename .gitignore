@@ -8,6 +8,7 @@
 /vendor/
 .idea
 mysql
+public/uploads
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
