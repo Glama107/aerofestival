@@ -8,7 +8,8 @@
 
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#programme" class="text-white hover:text-blue-300 nav-link">PROGRAMME</a>
-                <a href="#guinguette" class="text-white hover:text-blue-300 nav-link">RESTAURATION</a>
+                <a href="#guinguette" class="text-white hover:text-blue-300 nav-link">L'HÉLICE</a>
+                <a href="#venir" class="text-white hover:text-blue-300 nav-link">VENIR</a>
                 <a href="#partenaires" class="text-white hover:text-blue-300 nav-link">PARTENAIRES</a>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
@@ -30,7 +31,8 @@
         <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 bg-gray-900 bg-opacity-90 rounded-lg">
             <div class="flex flex-col space-y-4 p-4">
                 <a href="#programme" class="text-white hover:text-blue-300">PROGRAMME</a>
-                <a href="#guinguette" class="text-white hover:text-blue-300">RESTAURATION</a>
+                <a href="#guinguette" class="text-white hover:text-blue-300">L'HÉLICE</a>
+                <a href="#venir" class="text-white hover:text-blue-300">VENIR</a>
                 <a href="#partenaires" class="text-white hover:text-blue-300">PARTENAIRES</a>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center mt-2">
