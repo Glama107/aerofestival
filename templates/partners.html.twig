@@ -12,37 +12,9 @@
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=AIRLINE+1" alt="Partenaire 1" class="max-h-20">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=AVIATION+TECH" alt="Partenaire 2" class="max-h-20">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=FLIGHT+GEAR" alt="Partenaire 3" class="max-h-20">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=AERO+CLUB" alt="Partenaire 4" class="max-h-20">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=JET+PRO" alt="Partenaire 5" class="max-h-20">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-                            <img src="https://via.placeholder.com/150x80?text=SKY+TRAVEL" alt="Partenaire 6" class="max-h-20">
-                        </div>
-                    </div>
+                    {% for partner in partners %}
+                        {{ include('components/partner_card.html.twig') }}
+                    {% endfor %}
                 </div>
 
                 <!-- Navigation buttons -->
