@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contact;
 use App\Entity\Event;
 use App\Entity\Partner;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
@@ -48,7 +49,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Évènements', 'fas fa-list', Event::class);
-        yield MenuItem::linkToCrud('Partenaires', 'fas fa-list', Partner::class);
+        yield MenuItem::linkToCrud('Événements', 'fas fa-calendar-days', Event::class);
+        yield MenuItem::linkToCrud('Partenaires', 'fas fa-handshake', Partner::class);
+        yield MenuItem::linkToCrud('Contact', 'fas fa-address-card', Contact::class);
+
     }
 }

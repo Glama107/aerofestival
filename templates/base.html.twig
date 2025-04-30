@@ -94,6 +94,19 @@
                 nav.classList.add('bg-gradient-to-b');
             }
         });
-    </script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const toast = document.querySelector('[id^="toast-"]');
+                if (toast) {
+                    console.log('Toast trouvé, suppression');
+                    toast.remove();
+                } else {
+                    console.log('Aucun toast trouvé');
+                }
+            }, 3000);
+        });
+
+        </script>
     </body>
 </html>
