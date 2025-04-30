@@ -20,10 +20,10 @@ body {
 }
 
 .hero {
-    position: relative;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    overflow: hidden;
 }
 
 .hero-video {
@@ -305,10 +305,6 @@ body {
 /* Venir section */
 .venir-map {
     height: 400px;
-    background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=A%C3%A9rodrome+de+Villefranche&zoom=13&size=800x400&maptype=roadmap&markers=color:red%7CA%C3%A9rodrome+de+Villefranche&key=YOUR_API_KEY');
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
 }
 
 .transport-card {
@@ -321,4 +317,17 @@ body {
 
 .transport-card:hover {
     transform: translateY(-5px);
+}
+
+.countdown-box{
+    background: rgba(255, 255, 255, 0.15);
+}
+.countdown-value{
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
 }
