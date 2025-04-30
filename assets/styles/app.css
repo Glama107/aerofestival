@@ -317,3 +317,25 @@ body {
         border-right: none !important;
     }
 }
+
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--primary);
+}
+
+.input-field:focus {
+    border-left-width: 6px;
+}
+
+.login-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}

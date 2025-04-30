@@ -1,9 +1,6 @@
 <section id="accueil" class="hero flex items-center justify-center text-white relative overflow-hidden">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="https://videos.pexels.com/video-files/3678380/3678380-hd_1920_1080_30fps.mp4" type="video/mp4">
-        Votre navigateur ne supporte pas les vidéos HTML5.
-    </video>
-    <div class="hero-overlay"></div>
+    {{ include('components/video.html.twig') }}
+
 
     <div class="container mx-auto px-6 text-center hero-content">
         <div class="mb-6">
