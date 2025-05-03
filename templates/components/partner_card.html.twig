@@ -1,5 +1,8 @@
-<div class="swiper-slide">
-    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32">
-        <img src="{{ asset('uploads/partners/' ~ partner.image) }}" alt="{{ partner.title }}" class="max-h-20" />
+<a href="https://www.gulfstream.com" target="_blank" class="partner-card group swiper-slide">
+    <div class="partner-card-inner bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center h-40 gap-2">
+        <img src="{{ asset('uploads/partners/' ~ partner.image) }}" alt="{{ partner.title }}" class="partner-logo max-h-16 mb-2 transition-all duration-300 group-hover:opacity-80">
+        <div class="partner-name text-center">
+            <h3 class="text-sm font-semibold text-gray-800">{{ partner.title }}</h3>
+        </div>
     </div>
-</div>
+</a>

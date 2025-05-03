@@ -216,6 +216,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
+}
+
+.partner-card {
+    transition: all 0.3s ease;
+    perspective: 1000px;
+}
+
+.partner-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.partner-card:hover .partner-card-inner {
+    transform: translateY(-8px);
+}
+
+.partner-logo {
+    backface-visibility: hidden;
+}
+
+.partner-name {
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    h3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.partner-card:hover .partner-name {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .swiper-button-prev, .swiper-button-next {
