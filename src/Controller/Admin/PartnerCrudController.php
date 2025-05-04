@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class PartnerCrudController extends AbstractCrudController
@@ -23,12 +24,15 @@ class PartnerCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
+            UrlField::new('link')
+                ->setLabel('Link')
+                ->setRequired(false),
             TextField::new('imageFile')
                 ->setFormType(VichImageType::class)
                 ->onlyOnForms(),
             ImageField::new('image')
                 ->setBasePath('/uploads/partners')
-                ->onlyOnIndex()
+                ->onlyOnIndex(),
         ];
     }
 
