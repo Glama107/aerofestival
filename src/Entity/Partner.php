@@ -22,9 +22,11 @@ class Partner
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
-
     #[Vich\UploadableField(mapping: 'event_image', fileNameProperty: 'image')]
     private ?File $imageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTime $updatedAt = null;
 
     public function getId(): ?int
     {
@@ -48,7 +50,7 @@ class Partner
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
@@ -56,13 +58,29 @@ class Partner
     }
 
 
-    public function setImageFile(?File $file = null): void
+    public function setImageFile(?File $imageFile = null): void
     {
-        $this->imageFile = $file;
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new \DateTime();
+        }
     }
 
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getUpdatedAt(): ?\DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTime $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }
