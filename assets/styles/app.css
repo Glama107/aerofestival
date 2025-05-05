@@ -377,9 +377,6 @@ body {
     transform: translateY(-5px);
 }
 
-.countdown-box{
-    background: rgba(255, 255, 255, 0.15);
-}
 .countdown-value{
     font-family: 'Rajdhani', sans-serif;
 }
