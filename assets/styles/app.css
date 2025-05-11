@@ -7,7 +7,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8fafc;
     overflow-x: hidden;
 }
 
@@ -385,4 +384,20 @@ body {
     font-size: 0.8rem;
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
+}
+
+/* Poster section */
+.poster-container {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.poster-img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+    border-radius: 8px;
 }
