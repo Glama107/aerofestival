@@ -221,6 +221,7 @@ body {
     min-height: 400px;
     background-size: cover;
     background-position: center;
+    background-image: url('/public/images/l-helice.jpg');
 }
 
 /* Swiper customization */
