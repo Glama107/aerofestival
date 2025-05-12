@@ -36,7 +36,7 @@ jobs:
             npm run build
             php bin/console cache:clear
             echo "Setting permissions..."
-            sudo chown -R www-data:www-data /var/www/aerofestival/*
+            sudo chown -R deploy:www-data /var/www/aerofestival/*
             echo "Reloading Nginx..."
             sudo systemctl reload nginx
 
