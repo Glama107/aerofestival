@@ -37,6 +37,8 @@ jobs:
             php bin/console cache:clear
             echo "Setting permissions..."
             sudo chown -R deploy:www-data /var/www/aerofestival/*
+            sudo chown -R www-data:www-data /var/www/aerofestival/var
+            sudo chmod -R 777 /var/www/aerofestival/public/uploads
             echo "Reloading Nginx..."
             sudo systemctl reload nginx
 
