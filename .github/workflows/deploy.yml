@@ -23,6 +23,7 @@ jobs:
             echo "Pulling latest changes from Git..."
             git reset --hard HEAD
             git pull origin main --rebase
+            sudo chown -R deploy:www-data /var/www/aerofestival/*
             echo "Installing dependencies..."
             composer install --no-interaction --prefer-dist --optimize-autoloader
             echo "Running database migrations..."
