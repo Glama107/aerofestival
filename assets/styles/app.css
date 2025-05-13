@@ -194,6 +194,24 @@ body {
         transform: scale(0.8);
         transition: all 0.3s ease;
     }
+    a {
+        color: var(--color-blue-600);
+        --tw-font-weight: var(--font-weight-medium);
+        font-weight: var(--font-weight-medium);
+        display: inline-block;
+        margin-top: calc(var(--spacing) * 2);
+        &:hover {
+            color: var(--color-blue-800);
+        }
+        &::after {
+            font-family: "Font Awesome 5 Free", serif;
+            font-weight: 900;
+            content: "\f35d";
+            margin: 0 4px;
+            transition: transform 0.3s;
+        }
+    }
+
 }
 
 .right .timeline-content {
