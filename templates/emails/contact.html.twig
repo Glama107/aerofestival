@@ -1,0 +1,23 @@
+{% extends '@email/default/notification/body.html.twig' %}
+
+{% block content %}
+
+    <container>
+        <row>
+            <columns>Nom : {{ contact.name }}</columns>
+        </row>
+        <row>
+            <columns>Adresse mail : {{ contact.email }}</columns>
+        </row>
+        <row>
+            <columns>Sujet :  {{ contact.subject }}</columns>
+        </row>
+        <row>
+            <columns>Message : {{ contact.message }}</columns>
+        </row>
+    </container>
+
+
+{% endblock %}
+
+

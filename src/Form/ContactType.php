@@ -30,9 +30,8 @@ class ContactType extends AbstractType
             ->add('subject', ChoiceType::class, [
                 'label' => null,
                 'choices' => [
-                    'Être bénévole' => 'Être bénévole',
-                    'Problème technique' => 'Problème technique',
                     'Demander un partenariat' => 'Demander un partenariat',
+                    'Problème technique' => 'Problème technique',
                     'Autre' => 'Autre'
                 ],
                 'attr' => ['class' => 'w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white']
