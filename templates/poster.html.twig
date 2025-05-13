@@ -9,7 +9,16 @@
         </div>
 
         <div class="poster-container p-4 md:p-8 max-w-4xl mx-auto">
-            <img src="{{ asset('images/poster.jpg') }}" alt="poster officielle Aérofestival 2023" class="poster-img mx-auto">
+            <img id="poster-img" src="{{ asset('images/poster.jpg') }}" alt="poster officielle Aérofestival 2023" class="poster-img mx-auto cursor-pointer rounded-lg shadow-md transition-transform hover:scale-105">
+        </div>
+    </div>
+
+    <div id="poster-modal" class="poster-modal">
+        <div class="poster-modal-content">
+            <img src="{{ asset('images/poster.jpg') }}" alt="Affiche officielle Aérofestival 2023" class="max-h-full">
+        </div>
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
         </div>
     </div>
 </section>

@@ -8,3 +8,9 @@ import './bootstrap.js';
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import './scripts/poster';
+import './scripts/countdown';
+import './scripts/navbar';
+import './scripts/swiper';
+import './scripts/smooth-scroll';
+import './scripts/mobile-menu';
