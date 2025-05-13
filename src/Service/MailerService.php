@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use Symfony\Bridge\Twig\Mime\NotificationEmail;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 
 class MailerService
 {
@@ -19,7 +20,7 @@ class MailerService
 
     public function sendEmail(Contact $contact){
         $email = (new NotificationEmail())
-            ->from($this->adminEmail)
+            ->from(new Address($this->adminEmail, 'Aerofestival.fr'))
             ->to($this->senderEmail)
             ->subject('Demande de contact depuis Aerofestival.fr')
             ->htmlTemplate('emails/contact.html.twig')
