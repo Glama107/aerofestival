@@ -198,7 +198,6 @@ body {
         color: var(--color-blue-600);
         --tw-font-weight: var(--font-weight-medium);
         font-weight: var(--font-weight-medium);
-        display: content;
         margin-top: calc(var(--spacing) * 2);
         &:hover {
             color: var(--color-blue-800);
