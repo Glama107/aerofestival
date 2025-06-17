@@ -10,7 +10,7 @@
                 <a href="#programme" class="text-white hover:text-blue-300 nav-link">PROGRAMME</a>
                 <a href="#venir" class="text-white hover:text-blue-300 nav-link">VENIR</a>
                 <a href="#guinguette" class="text-white hover:text-blue-300 nav-link">L'HÉLICE</a>
-                <a href="#partenaires" class="text-white hover:text-blue-300 nav-link">PARTENAIRES</a>
+                <a href="#tombola" class="text-white hover:text-blue-300 nav-link">TOMBOLA</a>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
                         DASHBOARD
@@ -33,7 +33,7 @@
                 <a href="#programme" class="text-white hover:text-blue-300">PROGRAMME</a>
                 <a href="#venir" class="text-white hover:text-blue-300">VENIR</a>
                 <a href="#guinguette" class="text-white hover:text-blue-300">L'HÉLICE</a>
-                <a href="#partenaires" class="text-white hover:text-blue-300">PARTENAIRES</a>
+                <a href="#tombola" class="text-white hover:text-blue-300">TOMBOLA</a>
                 {% if app.user and is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('admin') }}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center mt-2">
                         DASHBOARD

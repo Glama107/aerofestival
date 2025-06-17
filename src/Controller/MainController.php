@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\EventRepository;
 use App\Repository\PartnerRepository;
+use App\Repository\TombolaPrizeRepository;
 use App\Service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,7 +17,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
-    public function index(EventRepository $eventRepository, PartnerRepository $partnerRepository, Request $request, EntityManagerInterface $entityManager, MailerService $mailerService): Response
+    public function index(EventRepository $eventRepository, PartnerRepository $partnerRepository, Request $request, EntityManagerInterface $entityManager, MailerService $mailerService, TombolaPrizeRepository $prizeRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -32,10 +33,13 @@ final class MainController extends AbstractController
         }
         $groupedEvents = $eventRepository->findAllGroupedByDay();
         $partners = $partnerRepository->findAll();
+        $prizes = $prizeRepository->findAll();
+
         return $this->render('homepage.html.twig', [
             'groupedEvents' => $groupedEvents,
             'partners' => $partners,
             'contactForm' => $form->createView(),
+            'prizes' => $prizes,
         ]);
     }
 }

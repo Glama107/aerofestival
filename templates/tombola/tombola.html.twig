@@ -1,0 +1,31 @@
+<section id="tombola" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold tracking-wider mb-4">
+                    TOMBOLA
+                </span>
+            <h2 class="text-3xl md:text-4xl font-bold section-title section-title-font">GRAND TIRAGE AU SORT</h2>
+            <p class="text-gray-600 mt-4 max-w-4xl mx-auto">
+                Participez à la <span class="font-bold text-blue-600">Tombola Aérofestival 2025</span> et tentez de remporter plus de <span class="font-bold">2000€ de lots exceptionnels</span> : équipements, bons d’achat, expériences uniques et bien plus encore !
+                Les billets sont en vente à l’aéroclub et durant toute la semaine de l’événement.
+                Tirage au sort le <strong>dimanche 6 juillet à 17h</strong> en présence de nos ambassadrices Nathalie et Sandra.
+            </p>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto">
+            {% if prizes is empty %}
+                <p class="flex justify-center">La liste des lots arrive prochainement...</p>
+            {% endif %}
+            <div class="swiper tombola-swiper">
+                <div class="swiper-wrapper">
+                    {% for prize in prizes %}
+                        {{ include('components/tombola_card.html.twig') }}
+                    {% endfor %}
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</section>

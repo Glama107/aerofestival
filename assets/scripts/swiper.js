@@ -35,3 +35,24 @@ const swiper = new Swiper('.swiper', {
         }
     }
 });
+
+const tombolaSwiper = new Swiper('.tombola-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: false,
+    navigation: {
+        nextEl: '.tombola-swiper .swiper-button-next',
+        prevEl: '.tombola-swiper .swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: false
+        }
+    }
+});

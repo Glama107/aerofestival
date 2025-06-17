@@ -1,0 +1,10 @@
+<div class="swiper-slide">
+    <div class="bg-white p-6 rounded-lg shadow-md h-full w-full max-w-md mx-auto">
+        <div class="h-56 md:h-64 mb-4 overflow-hidden rounded-lg">
+            <img src="{{ asset('uploads/prize/' ~ prize.image) }}"
+                 alt="{{ prize.title }}" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ prize.title }}</h3>
+        <p class="text-gray-600">{{ prize.description|raw }}</p>
+    </div>
+</div>
