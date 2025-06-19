@@ -1,9 +1,9 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.partner-swiper', {
     slidesPerView: 6,
     spaceBetween: 20,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.partner-swiper .swiper-button-next',
+        prevEl: '.partner-swiper .swiper-button-prev',
     },
     autoplay:
     {
@@ -44,6 +44,13 @@ const tombolaSwiper = new Swiper('.tombola-swiper', {
         nextEl: '.tombola-swiper .swiper-button-next',
         prevEl: '.tombola-swiper .swiper-button-prev',
     },
+    autoplay:
+        {
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+    loop: true,
     breakpoints: {
         640: {
             slidesPerView: 2,
