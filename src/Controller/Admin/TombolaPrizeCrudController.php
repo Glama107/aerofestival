@@ -27,7 +27,7 @@ class TombolaPrizeCrudController extends AbstractCrudController
             TextField::new('description')
                 ->setLabel('Description'),
             NumberField::new('value', 'Valeur €')
-                ->setNumDecimals(0),
+                ->setNumDecimals(2),
             TextField::new('imageFile')
                 ->setFormType(VichImageType::class)
                 ->onlyOnForms(),

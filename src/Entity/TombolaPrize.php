@@ -32,7 +32,7 @@ class TombolaPrize
     private ?\DateTime $updatedAt = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $value = null;
+    private ?float $value = null;
 
     public function getId(): ?int
     {
@@ -101,12 +101,12 @@ class TombolaPrize
         return $this;
     }
 
-    public function getValue(): ?int
+    public function getValue(): ?float
     {
         return $this->value;
     }
 
-    public function setValue(?int $value): static
+    public function setValue(?float $value): static
     {
         $this->value = $value;
 
