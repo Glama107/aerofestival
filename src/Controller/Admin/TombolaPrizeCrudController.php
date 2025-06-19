@@ -6,6 +6,7 @@ use App\Entity\Partner;
 use App\Entity\TombolaPrize;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
@@ -23,15 +24,17 @@ class TombolaPrizeCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
-            TextEditorField::new('description')
-                ->setLabel('Description')
-                ->onlyOnForms(),
+            TextField::new('description')
+                ->setLabel('Description'),
+            NumberField::new('value', 'Valeur €')
+                ->setNumDecimals(0),
             TextField::new('imageFile')
                 ->setFormType(VichImageType::class)
                 ->onlyOnForms(),
             ImageField::new('image')
                 ->setBasePath('/uploads/prize')
                 ->onlyOnIndex(),
+
         ];
     }
 

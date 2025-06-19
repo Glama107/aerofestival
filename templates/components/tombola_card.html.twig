@@ -1,10 +1,11 @@
 <div class="swiper-slide">
     <div class="bg-white p-6 rounded-lg shadow-md h-full w-full max-w-md mx-auto">
         <div class="h-56 md:h-64 mb-4 overflow-hidden rounded-lg">
-            <img src="{{ asset('uploads/prize/' ~ prize.image) }}"
+            <img src="{{ prize.image is not null ? (asset('uploads/prize/' ~ prize.image)) : 'https://citygem.app/wp-content/uploads/2024/08/placeholder-1-1.png' }}"
                  alt="{{ prize.title }}" class="w-full h-full object-cover">
         </div>
         <h3 class="text-xl font-bold text-gray-800 mb-2">{{ prize.title }}</h3>
-        <p class="text-gray-600">{{ prize.description|raw }}</p>
+        <p class="text-gray-400 mb-3">{{ prize.description|raw }}</p>
+        <div class="text-blue-600 font-bold">Valeur : {{ prize.value|default('N/A') }}€ </div>
     </div>
 </div>
