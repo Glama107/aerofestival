@@ -20,5 +20,17 @@
     </head>
     <body class="bg-white">
         {% block body %}{% endblock %}
+
+        {% if app.environment == 'prod' %}
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-DM211JQSQ0"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-DM211JQSQ0');
+            </script>
+        {% endif %}
     </body>
 </html>
