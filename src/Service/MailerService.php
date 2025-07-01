@@ -22,6 +22,7 @@ class MailerService
         $email = (new NotificationEmail())
             ->from(new Address($this->adminEmail, 'Aerofestival.fr'))
             ->to($this->senderEmail)
+            ->replyTo($contact->getEmail())
             ->subject('Demande de contact depuis Aerofestival.fr')
             ->htmlTemplate('emails/contact.html.twig')
             ->context([
