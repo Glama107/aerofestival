@@ -5,7 +5,7 @@ function updateCountdown() {
     const distance = targetDate - now;
 
     if (distance < 0) {
-        document.querySelector(".countdown-container").innerHTML = "<p>Événement en cours !</p>";
+        document.querySelector(".countdown-container").innerHTML = "<p>Événement terminé !</p>";
         clearInterval(interval);
         return;
     }
