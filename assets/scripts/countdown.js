@@ -1,4 +1,4 @@
-const targetDate = new Date("2025-06-30T08:00:00").getTime(); // 🕗 À adapter
+const targetDate = new Date("2026-06-15T08:00:00").getTime(); // 🕗 À adapter
 
 function updateCountdown() {
     const now = new Date().getTime();
