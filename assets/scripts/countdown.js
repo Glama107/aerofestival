@@ -1,14 +1,21 @@
-const targetDate = new Date("2026-06-15T08:00:00").getTime(); // 🕗 À adapter
+const startDate = new Date("2026-06-15T08:00:00").getTime();
+const endDate   = new Date("2026-06-21T08:00:00").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
-    const distance = targetDate - now;
 
-    if (distance < 0) {
+    if (now >= endDate) {
         document.querySelector(".countdown-container").innerHTML = "<p>Événement terminé !</p>";
         clearInterval(interval);
         return;
     }
+
+    if (now >= startDate) {
+        document.querySelector(".countdown-container").innerHTML = "<p>Événement en cours</p>";
+        return;
+    }
+
+    const distance = startDate - now;
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -22,4 +29,4 @@ function updateCountdown() {
 }
 
 const interval = setInterval(updateCountdown, 1000);
-updateCountdown(); // Appel initial
+updateCountdown();
