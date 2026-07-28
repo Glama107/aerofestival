@@ -56,9 +56,9 @@ jobs:
             echo "Pulling latest changes from Git..."
             git reset --hard HEAD
             git pull origin main --rebase
-            sudo chown -R deploy:www-data /var/www/aerofestival/*
+            sudo chown -R $(whoami):www-data /var/www/aerofestival/*
             echo "Installing dependencies..."
-            composer install --no-interaction --prefer-dist --optimize-autoloader --classmap-authoritative --no-dev
+            composer install --no-interaction --prefer-dist --optimize-autoloader --classmap-authoritative
 
       - name: Upload built assets
         uses: appleboy/scp-action@v0.1.7
@@ -88,7 +88,7 @@ jobs:
             php bin/console assets:install
             php bin/console cache:clear
             echo "Setting permissions..."
-            sudo chown -R deploy:www-data /var/www/aerofestival/*
+            sudo chown -R $(whoami):www-data /var/www/aerofestival/*
             sudo chown -R www-data:www-data /var/www/aerofestival/var
             sudo chmod -R 777 /var/www/aerofestival/public/uploads
             echo "Reloading Nginx..."
