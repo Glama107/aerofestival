@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install PHP dependencies (needed for Symfony UX asset packages)
+        run: composer install --no-interaction --prefer-dist --no-scripts --no-dev
+
       - name: Install dependencies
         run: npm ci
 
