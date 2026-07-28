@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Contact;
 use App\Entity\Event;
+use App\Entity\FestivalSettings;
 use App\Entity\Partner;
 use App\Entity\TombolaPrize;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
@@ -53,6 +54,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Événements', 'fas fa-calendar-days', Event::class);
         yield MenuItem::linkToCrud('Partenaires', 'fas fa-handshake', Partner::class);
         yield MenuItem::linkToCrud('Tombola', 'fas fa-ticket-alt', TombolaPrize::class);
+        yield MenuItem::linkToCrud("Dates de l'événement", 'fas fa-calendar-day', FestivalSettings::class);
 
 
     }

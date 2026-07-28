@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\EventRepository;
+use App\Repository\FestivalSettingsRepository;
 use App\Repository\PartnerRepository;
 use App\Repository\TombolaPrizeRepository;
 use App\Service\MailerService;
@@ -17,7 +18,7 @@ use Symfony\Component\Routing\Attribute\Route;
 final class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
-    public function index(EventRepository $eventRepository, PartnerRepository $partnerRepository, Request $request, EntityManagerInterface $entityManager, MailerService $mailerService, TombolaPrizeRepository $prizeRepository): Response
+    public function index(EventRepository $eventRepository, PartnerRepository $partnerRepository, Request $request, EntityManagerInterface $entityManager, MailerService $mailerService, TombolaPrizeRepository $prizeRepository, FestivalSettingsRepository $festivalSettingsRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -34,12 +35,14 @@ final class MainController extends AbstractController
         $groupedEvents = $eventRepository->findAllGroupedByDay();
         $partners = $partnerRepository->findAllCached();
         $prizes = $prizeRepository->findAllCached();
+        $festivalSettings = $festivalSettingsRepository->getCurrent();
 
         return $this->render('homepage.html.twig', [
             'groupedEvents' => $groupedEvents,
             'partners' => $partners,
             'contactForm' => $form->createView(),
             'prizes' => $prizes,
+            'festivalSettings' => $festivalSettings,
         ]);
     }
 }

@@ -1,17 +1,18 @@
-const startDate = new Date("2026-06-15T08:00:00").getTime();
-const endDate   = new Date("2026-06-21T08:00:00").getTime();
+const container = document.querySelector(".countdown-container");
+const startDate = new Date(container.dataset.start).getTime();
+const endDate   = new Date(container.dataset.end).getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
 
     if (now >= endDate) {
-        document.querySelector(".countdown-container").innerHTML = "<p>Événement terminé !</p>";
+        container.innerHTML = "<p>Événement terminé !</p>";
         clearInterval(interval);
         return;
     }
 
     if (now >= startDate) {
-        document.querySelector(".countdown-container").innerHTML = "<p>Événement en cours</p>";
+        container.innerHTML = "<p>Événement en cours</p>";
         return;
     }
 
