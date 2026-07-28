@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\FestivalSettings;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -45,5 +46,12 @@ class FestivalSettingsCrudController extends AbstractCrudController
     {
         return $actions
             ->disable(Action::NEW, Action::DELETE);
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Réglages généraux')
+            ->setEntityLabelInPlural('Réglages généraux');
     }
 }

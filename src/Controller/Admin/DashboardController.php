@@ -54,7 +54,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Événements', 'fas fa-calendar-days', Event::class);
         yield MenuItem::linkToCrud('Partenaires', 'fas fa-handshake', Partner::class);
         yield MenuItem::linkToCrud('Tombola', 'fas fa-ticket-alt', TombolaPrize::class);
-        yield MenuItem::linkToCrud("Dates de l'événement", 'fas fa-calendar-day', FestivalSettings::class);
+        yield MenuItem::linkToCrud('Réglages généraux', 'fas fa-sliders-h', FestivalSettings::class);
 
 
     }
