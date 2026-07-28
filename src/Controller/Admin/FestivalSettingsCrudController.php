@@ -37,7 +37,7 @@ class FestivalSettingsCrudController extends AbstractCrudController
                 ->onlyOnForms(),
             ImageField::new('posterImage')
                 ->setLabel('Affiche officielle')
-                ->setBasePath('/uploads/poster')
+                ->formatValue(fn ($value, $entity) => $value ? '/uploads/poster/' . $value : '/images/affiche2.JPG')
                 ->onlyOnIndex(),
         ];
     }
