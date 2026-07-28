@@ -56,7 +56,7 @@ jobs:
             cd /var/www/aerofestival/
             echo "Pulling latest changes from Git..."
             git reset --hard HEAD
-            git clean -fd
+            git clean -fd -e public/uploads -e videos
             git pull origin main --rebase
             sudo chown -R $(whoami):www-data /var/www/aerofestival/*
             echo "Installing dependencies..."
