@@ -16,6 +16,14 @@ class TombolaPrizeRepository extends ServiceEntityRepository
         parent::__construct($registry, TombolaPrize::class);
     }
 
+    public function findAllCached(): array
+    {
+        return $this->createQueryBuilder('t')
+            ->getQuery()
+            ->enableResultCache(300, 'tombola_prizes_all')
+            ->getResult();
+    }
+
     //    /**
     //     * @return TombolaPrize[] Returns an array of TombolaPrize objects
     //     */

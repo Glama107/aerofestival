@@ -21,6 +21,7 @@ class EventRepository extends ServiceEntityRepository
         $events = $this->createQueryBuilder('e')
             ->orderBy('e.startDate', 'ASC')
             ->getQuery()
+            ->enableResultCache(300, 'events_grouped_by_day')
             ->getResult();
 
         $grouped = [];

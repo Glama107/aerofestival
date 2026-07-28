@@ -32,8 +32,8 @@ final class MainController extends AbstractController
             return $this->redirectToRoute('app_main', [], Response::HTTP_SEE_OTHER);
         }
         $groupedEvents = $eventRepository->findAllGroupedByDay();
-        $partners = $partnerRepository->findAll();
-        $prizes = $prizeRepository->findAll();
+        $partners = $partnerRepository->findAllCached();
+        $prizes = $prizeRepository->findAllCached();
 
         return $this->render('homepage.html.twig', [
             'groupedEvents' => $groupedEvents,

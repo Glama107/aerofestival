@@ -16,6 +16,14 @@ class PartnerRepository extends ServiceEntityRepository
         parent::__construct($registry, Partner::class);
     }
 
+    public function findAllCached(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->getQuery()
+            ->enableResultCache(300, 'partners_all')
+            ->getResult();
+    }
+
     //    /**
     //     * @return Partner[] Returns an array of Partner objects
     //     */
