@@ -92,6 +92,10 @@ jobs:
             echo "Setting permissions..."
             sudo chown -R $(whoami):www-data /var/www/aerofestival/*
             sudo chown -R www-data:www-data /var/www/aerofestival/var
-            sudo chmod -R 777 /var/www/aerofestival/public/uploads
+            sudo chown -R $(whoami):www-data /var/www/aerofestival/public/uploads
+            sudo find /var/www/aerofestival/public/uploads -type d -exec chmod 775 {} \;
+            sudo find /var/www/aerofestival/public/uploads -type f -exec chmod 664 {} \;
+            sudo chown $(whoami):www-data /var/www/aerofestival/.env
+            sudo chmod 640 /var/www/aerofestival/.env
             echo "Reloading Nginx..."
             sudo systemctl reload nginx

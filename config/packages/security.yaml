@@ -20,6 +20,11 @@ security:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+            # Anti-brute-force applicatif : limite par IP et par identifiant.
+            # Complete le limit_req nginx, qui lui ne voit que l'IP.
+            login_throttling:
+                max_attempts: 5
+                interval: '15 minutes'
             logout:
                 path: app_logout
                 # where to redirect after logout
