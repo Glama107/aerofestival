@@ -11,6 +11,9 @@ doctrine:
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
+        # Requis a partir de PHP 8.4 + ORM 3.4 : sans cela, ORM deprecie
+        # Doctrine\ORM\Proxy\Autoloader et le supprimera en ORM 4.
+        enable_native_lazy_objects: true
         report_fields_where_declared: true
         validate_xml_mapping: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
