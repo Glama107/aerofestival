@@ -17,6 +17,15 @@ jobs:
         with:
           node-version: 20
 
+      # Doit rester aligne sur le PHP du VPS : le runner fournit 8.3 par defaut,
+      # que le composer.lock ne satisfait plus, et un ext-redis 5.x avec lequel
+      # symfony/cache 7.4 entre en conflit.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: ctype, iconv, intl, pdo_pgsql
+
       - name: Install PHP dependencies (needed for Symfony UX asset packages)
         run: composer install --no-interaction --prefer-dist --no-scripts --no-dev
 
