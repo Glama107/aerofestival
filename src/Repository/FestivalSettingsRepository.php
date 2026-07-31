@@ -16,8 +16,14 @@ class FestivalSettingsRepository extends ServiceEntityRepository
         parent::__construct($registry, FestivalSettings::class);
     }
 
-    public function getCurrent(): FestivalSettings
+    /**
+     * Le back-office ne gere qu'une seule ligne de reglages, mais rien ne
+     * garantit qu'elle porte l'id 1 : la supprimer puis la recreer lui en
+     * donne un autre. On prend donc la premiere ligne existante, et null
+     * quand la table est vide.
+     */
+    public function getCurrent(): ?FestivalSettings
     {
-        return $this->find(1);
+        return $this->findOneBy([], ['id' => 'ASC']);
     }
 }

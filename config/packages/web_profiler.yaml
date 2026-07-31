@@ -8,4 +8,7 @@ when@dev:
 
 when@test:
     framework:
-        profiler: { collect: false }
+        profiler:
+            collect: false
+            # Depuis Symfony 7.3, ne pas fixer cette option est deprecie.
+            collect_serializer_data: true
